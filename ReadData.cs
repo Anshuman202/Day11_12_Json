@@ -9,8 +9,9 @@ namespace InventoryManagement
 {
     public class ReadData
     {
+       
         public InventoeryModel Read(string path)
-        {
+        { 
             using (StreamReader file = new StreamReader(path))
             {
 
