@@ -8,9 +8,9 @@ namespace InventoryManagement
 {
     public class InventoeryModel
     {
-        public TypesOfRice typesOfRice;
-        public TypesOfPuslses typesOfPulses;
-        public TypesOfWheat typesOfWheat;
+        public List<TypesOfRice> typesOfRice;
+        public List<TypesOfPuslses> typesOfPulses;
+        public List<TypesOfWheat> typesOfWheat;
 
     }
 
@@ -34,6 +34,6 @@ namespace InventoryManagement
         public int weight;
         public int price;
     }
-}
-    
 
+
+}
