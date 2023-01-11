@@ -60,14 +60,4 @@
         } 
     }
 }
-            Console.WriteLine("Types of Wheat is:");
-            Console.WriteLine("--------------------");
-            Console.WriteLine(Data.typesOfWheat.name);
-            Console.WriteLine(Data.typesOfWheat.weight);
-            Console.WriteLine(Data.typesOfWheat.price);
-
-
-        }
-
-    }
-}
+            
