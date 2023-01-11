@@ -13,26 +13,53 @@
 
             Console.WriteLine("Types of Rice is:");
             Console.WriteLine("--------------------");
+            for (int i = 0; i < Info.typesOfRice.Count; i++)
+            {
+                Console.WriteLine(Info.typesOfRice[i].name);
+                Console.WriteLine(Info.typesOfRice[i].weight);
+                Console.WriteLine(Info.typesOfRice[i].price);
 
-            Console.WriteLine(Data.typesOfRice.name);
-            Console.WriteLine(Data.typesOfRice.weight);
-            Console.WriteLine(Data.typesOfRice.price);
-
+                int val = Info.typesOfRice[i].weight * Info.typesOfRice[i].price;
+                Console.WriteLine("The price for" + Info.typesOfRice[i].weight + "kg is" + val);
+                Console.WriteLine();
+            }
             Console.WriteLine("--------------------");
 
             Console.WriteLine("Types of Pulses is:");
             Console.WriteLine("--------------------");
 
-            Console.WriteLine(Data.typesOfPulses.name);
-            Console.WriteLine(Data.typesOfPulses.weight);
-            Console.WriteLine(Data.typesOfPulses.price);
 
+            for (int i = 0; i < Info.typesOfPulses.Count; i++)
+            {
+                Console.WriteLine(Info.typesOfPulses[i].name);
+                Console.WriteLine(Info.typesOfPulses[i].weight);
+                Console.WriteLine(Info.typesOfPulses[i].price);
 
+                int val = Info.typesOfPulses[i].weight * Info.typesOfPulses[i].price;
+                Console.WriteLine("The price for" + Info.typesOfPulses[i].weight + "kg is" + val);
+                Console.WriteLine();
 
-
-
+            }
             Console.WriteLine("--------------------");
 
+            Console.WriteLine("Types of Wheat is:");
+            Console.WriteLine("--------------------");
+
+            for (int i = 0; i < Info.typesOfWheat.Count; i++)
+            {
+                Console.WriteLine(Info.typesOfWheat[i].name);
+                Console.WriteLine(Info.typesOfWheat[i].weight);
+                Console.WriteLine(Info.typesOfWheat[i].price);
+
+                int val = Info.typesOfWheat[i].weight * Info.typesOfWheat[i].price;
+                Console.WriteLine("The price for" + Info.typesOfWheat[i].weight + "kg is" + val);
+                Console.WriteLine();
+
+
+            }
+        } 
+    }
+}
             Console.WriteLine("Types of Wheat is:");
             Console.WriteLine("--------------------");
             Console.WriteLine(Data.typesOfWheat.name);
