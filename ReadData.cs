@@ -5,20 +5,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace InventoryManagement
+namespace StockManagement
 {
     public class ReadData
     {
-       
-        public InventoeryModel Read(string path)
-        { 
+
+        public StockModel Read(string path)
+        {
             using (StreamReader file = new StreamReader(path))
             {
 
                 try
                 {
                     string json = file.ReadToEnd();
-                    return JsonConvert.DeserializeObject<InventoeryModel>(json);
+                    return JsonConvert.DeserializeObject<StockModel>(json);
 
                 }
                 catch (Exception e)
@@ -28,7 +28,8 @@ namespace InventoryManagement
             }
         }
 
+
     }
 }
-    
+
 
