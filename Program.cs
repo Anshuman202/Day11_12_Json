@@ -1,46 +1,73 @@
-﻿namespace InventoryManagement
+﻿using StockManagement;
+
+namespace StockManagement
 {
-    public class Program
+    class Program
     {
         public static void Main(string[] args)
         {
-            string path = "E:\\InventoryManagement\\InventoryManagement\\inventory.json";
+            int total = 0, total1 = 0, total2 = 0;
+            string path = "E:\\InventoryManagement\\InventoryManagement\\Stock.json";
             ReadData obj = new ReadData();
-            var Data = obj.Read(path);
+            var Info = obj.Read(path);
 
 
             Console.WriteLine("--------------------");
 
-            Console.WriteLine("Types of Rice is:");
+            Console.WriteLine("Common Stock share : ");
             Console.WriteLine("--------------------");
+            for (int i = 0; i < Info.commonStocks.Count; i++)
+            {
+                Console.WriteLine(Info.commonStocks[i].sharename);
+                Console.WriteLine(Info.commonStocks[i].numberOfShare);
+                Console.WriteLine(Info.commonStocks[i].sharePrice);
 
-            Console.WriteLine(Data.typesOfRice.name);
-            Console.WriteLine(Data.typesOfRice.weight);
-            Console.WriteLine(Data.typesOfRice.price);
+                int val = Info.commonStocks[i].numberOfShare * Info.commonStocks[i].sharePrice;
+                total += val;
+                Console.WriteLine("The total stcok for " + Info.commonStocks[i].numberOfShare + " shares is : " + val);
+                Console.WriteLine();
 
-            Console.WriteLine("--------------------");
-
-            Console.WriteLine("Types of Pulses is:");
-            Console.WriteLine("--------------------");
-
-            Console.WriteLine(Data.typesOfPulses.name);
-            Console.WriteLine(Data.typesOfPulses.weight);
-            Console.WriteLine(Data.typesOfPulses.price);
-
-
-
-
+            }
+            Console.WriteLine("The  total value for Common Stocks is : {0}", total);
+            Console.WriteLine();
 
             Console.WriteLine("--------------------");
-
-            Console.WriteLine("Types of Wheat is:");
+            Console.WriteLine("Preferred Stock share : ");
             Console.WriteLine("--------------------");
-            Console.WriteLine(Data.typesOfWheat.name);
-            Console.WriteLine(Data.typesOfWheat.weight);
-            Console.WriteLine(Data.typesOfWheat.price);
+            for (int i = 0; i < Info.preferredStocks.Count; i++)
+            {
+                Console.WriteLine(Info.preferredStocks[i].sharename);
+                Console.WriteLine(Info.preferredStocks[i].numberOfShare);
+                Console.WriteLine(Info.preferredStocks[i].sharePrice);
+
+                int val = Info.preferredStocks[i].numberOfShare * Info.preferredStocks[i].sharePrice;
+                total1 += val;
+                Console.WriteLine("The  total stcok for " + Info.preferredStocks[i].numberOfShare + " share is : " + val);
+                Console.WriteLine();
+
+            }
+            Console.WriteLine("The  total value for Preferred Stocks is : {0}", total1);
+            Console.WriteLine();
 
 
+            Console.WriteLine("--------------------");
+            Console.WriteLine("Hybrid Stock share : ");
+            Console.WriteLine("--------------------");
+
+            for (int i = 0; i < Info.hybridStocks.Count; i++)
+            {
+                Console.WriteLine(Info.hybridStocks[i].sharename);
+                Console.WriteLine(Info.hybridStocks[i].numberOfShare);
+                Console.WriteLine(Info.hybridStocks[i].sharePrice);
+
+                int val = Info.hybridStocks[i].numberOfShare * Info.hybridStocks[i].sharePrice;
+                total2 += val;
+                Console.WriteLine("The total stcok for " + Info.hybridStocks[i].numberOfShare + " share is : " + val);
+                Console.WriteLine();
+
+            }
+            Console.WriteLine("The  total value for Hybrid Stocks is : {0}", total2);
+            Console.WriteLine();
         }
-
     }
 }
